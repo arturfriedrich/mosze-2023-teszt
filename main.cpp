@@ -1,26 +1,24 @@
-// Kommentelt
-
 #include <iostream>
 
-constexpr int N_ELEMENTS = 100;  // constexpr is not existing
+const int N_ELEMENTS = 100;  // Use 'const' instead of 'constexpr'
 
 int main()
 {
-    int *b = new int[NELEMENTS];  // Comment: Variable name should match the constexpr variable name (N_ELEMENTS).
-    std::cout << '1-100 ertekek duplazasa'  // Comment: Single quotes should be double quotes for string literals.
-    for (int i = 0;)  // Comment: The for loop has a missing condition and an extra semicolon.
+    int *b = new int[N_ELEMENTS];  // Corrected the variable name to match N_ELEMENTS.
+    std::cout << "1-100 ertekek duplazasa";  // Corrected single quotes to double quotes for the string literal.
+    for (int i = 0; i <= N_ELEMENTS; i++)  // Added the loop condition and removed the extra semicolon.
     {
         b[i] = i * 2;
     }
-    for (int i = 0; i; i++)  // Comment: The second for loop condition (i) is always false, it should be i < N_ELEMENTS.
+    for (int i = 0; i <= N_ELEMENTS; i++)  // Corrected the loop condition to iterate N_ELEMENTS times.
     {
-        std::cout << "Ertek:"  // Comment: Missing semicolon at the end of this line.
+        std::cout << b[i] << std::endl;  // Added the missing semicolon at the end of the line.
     }    
     std::cout << "Atlag szamitasa: " << std::endl;
-    int atlag;
-    for (int i = 0; i < N_ELEMENTS, i++)  // Comment: The comma should be a semicolon in the for loop condition.
+    int atlag = 0;  // Initialized 'atlag' to 0.
+    for (int i = 0; i < N_ELEMENTS; i++)  // Replaced the comma with a semicolon in the loop condition.
     {
-        atlag += b[i]  // Comment: Missing semicolon at the end of this line.
+        atlag += b[i];  // Added the missing semicolon at the end of the line.
     }
     atlag /= N_ELEMENTS;
     std::cout << "Atlag: " << atlag << std::endl;
